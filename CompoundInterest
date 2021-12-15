@@ -1,0 +1,47 @@
+/*Calculation of Compound Interest*/
+#include <stdio.>
+#include <conio.h>
+#include <math.h>
+
+int main()
+{
+  void CICalc(double,double,int);
+  
+  double pricipal,rate;
+  int years;
+  char ch;
+  
+  do{
+    printf("\nEnter Principal Amount : ");
+    scanf("%lf", &principal);
+    
+    printf("\nEnter rate of interest in percentage : ");
+    scanf("%lf", &rate);
+    
+    printf("\nEnter number of years : ");
+    scanf("%d", &years);
+    
+    CICalc(principal,rate,years);
+    
+    printf("\nDo you want to continue?[Y][N] :");
+    
+    scanf("%c", &ch);
+    }while(ch=='Y' || ch=='y');
+    
+    return(0);
+    }
+    
+    void CICalc(double p, double r, int y)
+    {
+      double interest;
+      int i;
+      
+      printf("\n\tYear \t\t Interest");
+      printf("\n\t---------------------------");
+      
+      for (i=1;i<=y;i++)
+      {
+        interest = p*pow(1.0 +r, i);
+        printf("\n\t %d \t\t %.2f",i,interest);
+      }
+    }  
